@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-# infinite loop prints a string
-
-while true ; do
-    echo "To infinity and beyond"
-    sleep 2
+#displays To infinity and beyond indefinitely.
+i="1"
+while [ $i -eq 1 ]
+do
+echo "To infinity and beyond"
+$"sleep" "2"
 done

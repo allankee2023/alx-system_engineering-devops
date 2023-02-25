@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# uses pgrep to display pid and bash. no -l omits bash
-
-pgrep -l bash
+#displays the PID, along with the process name, of processes whose name contain
+# the word bash.
+pgrep -l "bash"

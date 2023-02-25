@@ -1,47 +1,36 @@
-# What I learned from this project  
-At the end of this project you are expected to be able to explain to anyone, without the help of Google:  
----  
+# Processes and signals
+# Bash scripts
 
-**What is a PID?**  
-*Process identifier.*  
+- ##### 0-what-is-my-pid
+A Bash script that displays its own PID.
 
-**What is a process?**  
-*An instance of a program being executed.*  
+- ##### 1-list_your_processes
+A Bash script that displays a list of currently running processes.
 
-**How to find a process’ PID?**  
-*ps ax | grep "program name".*  
+- ##### 2-show_your_bash_pid
+A Bash script that displays lines containing the bash word, thus allowing you to
+ easily get the PID of your Bash process.
 
-**How to kill a process?**  
-*pkill, killall, or kill -9 pid.*  
+- ##### 3-show_your_bash_pid_made_easy
+A Bash script that displays the PID, along with the process name, of processes
+ whose name contain the word bash.
 
-**What is a signal?**  
-*A system call response or a readproc. A signal is an interprocess communication or async notification.*  
+- ##### 4-to_infinity_and_beyond
+A Bash script that displays To infinity and beyond indefinitely.
 
-**What are the 2 signals that cannot be ignored?**  
-*SIGKILL and SIGSTOP.* 
+- ##### 5-dont_stop_me_now
+A Bash script that stops 4-to_infinity_and_beyond process.
 
-## Each scripts and their output?**  
-* Script 0 - Write a Bash script that displays its own PID.      
-* Script 1 - Write a Bash script that displays a list of currently running processes.    
-* Script 2 - write a Bash script that displays line containing the bash word, thus allowing you to easily get the PID of your Bash process.      
-* Script 3 - Write a Bash script that displays the PID, along with the process name, of processes whose name contain the word bash.    
-* Script 4 - Write a Bash script that displays To infinity and beyond indefinitely.    
-* Script 5 - We killed our 4-to_infinity_and_beyond process using ctrl+c in the previous task, there is actually another way to do this.      
-* Script 6 - Write a Bash script that kills 4-to_infinity_and_beyond process.      
-* Script 7 - Write a Bash script that displays:     
-* Script 8 - Write a Bash script that kills the process 7-highlander.      
+- ##### 6-stop_me_if_you_can
+A Bash script that stops 4-to_infinity_and_beyond process.
 
+- ##### 7-highlander
+A Bash script that displays:
+  - `To infinity and beyond` indefinitely
+  - With a `sleep 2` in between each iteration
+  - `I am invincible!!!` when receiving a SIGTERM signal
+A copy of `6-stop_me_if_you_can` script named `67-stop_me_if_you_can`, kills the
+`7-highlander` process instead of the `4-to_infinity_and_beyond` one.
 
-#### Limitations of these projects:  
-___
-
--Allowed editors: vi, vim, emacs  
--All your files will be interpreted on Ubuntu 14.04 LTS  
--All your files should end with a new line  
--A README.md file, at the root of the folder of the project, is mandatory  
--All your Bash script files must be executable  
--You are not allowed to use awk  
--Your Bash script must pass Shellcheck (version 0.3.3-1~ubuntu14.04.1 via apt-get) without any error  
--The first line of all your Bash scripts should be exactly #!/usr/bin/env bash  
--The second line of all your Bash scripts should be a comment explaining what is the script doing  
-
+- ##### 8-beheaded_process
+A Bash script that kills the process 7-highlander.

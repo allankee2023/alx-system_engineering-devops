@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# changes the user
-sudo -u "$1" "whoami"

@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# bypasses a trap.
+# Kills the process of 7-highlander.
 
-pgrep -f ./7-highlander | xargs kill -9 -1
+pkill -SIGKILL -f "7-highlander"

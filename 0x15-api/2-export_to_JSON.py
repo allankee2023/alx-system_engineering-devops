@@ -1,33 +1,29 @@
 #!/usr/bin/python3
-""" Python script that uses rest api to fetch data """
+"""Exports data in the JSON format"""
 
 if __name__ == "__main__":
-    """ script that does what is asked above """
+
     import json
     import requests
-    from sys import argv
+    import sys
 
-    # get the id and cast into an int
-    employee_id = int(argv[1])
-    # retrieve the user info, holds name, company json, website, phone, email,
-    # username, address, geo location, city, zip, suite, and id
-    user_info = requests.get("https://jsonplaceholder.typicode.com/users/{}".
-                             format(employee_id)).json()
-    # Gets the todo list which contains userid, id, title, completed
-    todo_list = requests.get(
-                "https://jsonplaceholder.typicode.com/todos?userId={}".
-                format(employee_id)).json()
-    # Get the username in the json
-    username = user_info.get("username")
-    array = []
-    for each_todo in todo_list:
-        temp = {}
-        temp["task"] = each_todo.get("title")
-        temp["completed"] = each_todo.get("completed")
-        temp["username"] = username
-        array.append(temp)
-    # JASON DE RULLLOOO!! JJJJJ ARRR!! YEE!!
-    jsonderulo = {}
-    jsonderulo[employee_id] = array
-    with open("{}.json".format(employee_id), "w") as jasonderulo:
-        json.dump(jsonderulo, jasonderulo)
+    user_id = sys.argv[1]
+    url = 'https://jsonplaceholder.typicode.com/users/{}/'.format(user_id)
+    todos_url = url + 'todos'
+    user = requests.get(url).json()
+    todos = requests.get(todos_url).json()
+
+    todo_list = []
+    for todo in todos:
+        new_dict = {}
+        new_dict['task'] = todo.get('title')
+        new_dict['completed'] = todo.get('completed')
+        new_dict['username'] = user.get('username')
+        todo_list.append(new_dict)
+
+    todo_dict = {user.get('id'): todo_list}
+
+    file_name = '{}.json'.format(user.get('id'))
+
+    with open(file_name, mode='w') as outfile:
+        json.dump(todo_dict, outfile)

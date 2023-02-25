@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
-# prints the process id
-
-echo $BASHPID
+#Bash script that displays its own PID.
+echo "$$"
